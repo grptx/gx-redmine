@@ -1,0 +1,16 @@
+{
+  "name": "gx-redmine",
+  "version": "0.0.1",
+  "description": "Typescript wrapper for Axios Redmine Client",
+  "main": "index.js",
+  "scripts": {
+  },
+  "author": "Roberto Rossetti",
+  "license": "ISC",
+  "dependencies": {
+    "axios-redmine": "0.0.13"
+  },
+  "devDependencies": {
+
+  }
+}
