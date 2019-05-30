@@ -8,8 +8,6 @@ const Redmine = require('node-redmine');
 
 class RedmineAsync {
 
-    _redmine;
-
     constructor(hostname, config) {
         this._redmine = new Redmine(hostname, config);
     }
@@ -24,3 +22,5 @@ class RedmineAsync {
         });
     }
 }
+
+module.exports = RedmineAsync;
