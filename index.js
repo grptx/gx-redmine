@@ -12,13 +12,12 @@ class RedmineAsync {
         this._redmine = new Redmine(hostname, config);
     }
 
-    issue(params) {
+    issues(params) {
         return new Promise((resolve, reject)=> {
-            this._redmine.issue(params).then((result) => {
-                resolve(result);
-            }).catch((error) => {
-                reject(error);
-            })
+            this._redmine.issues(params, function(err, data) {
+                if (err) reject(err);
+                resolve(data);
+            });
         });
     }
 }

@@ -1,6 +1,6 @@
 {
   "name": "gx-redmine",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Typescript wrapper for Redmine Client",
   "main": "index.js",
   "scripts": {},
