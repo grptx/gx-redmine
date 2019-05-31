@@ -1,6 +1,6 @@
 {
   "name": "gx-redmine",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "ES7 async wrapper for node-redmine package",
   "main": "index.js",
   "scripts": {},
