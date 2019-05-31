@@ -1,7 +1,7 @@
 {
   "name": "gx-redmine",
   "version": "0.1.0",
-  "description": "Typescript wrapper for Redmine Client",
+  "description": "ES7 async wrapper for node-redmine package",
   "main": "index.js",
   "scripts": {},
   "author": "Roberto Rossetti",
