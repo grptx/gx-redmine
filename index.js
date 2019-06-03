@@ -34,7 +34,7 @@ class RedmineAsync {
         return new Promise((resolve, reject) => {
             this._redmine.get_issue_by_id(id, params, function (err, data) {
                 if (err) reject(err);
-                resolve(data);
+                resolve(data.issue);
             });
         });
     }

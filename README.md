@@ -17,7 +17,7 @@ npm install gx-redmine
 ## Usage
 
 ```js
-import RedmineAsync from "gx-redmine";
+import RedmineAsync = require("gx-redmine");
 
 const hostname = process.env.REDMINE_HOST || 'http://localhost';
 const config = {
