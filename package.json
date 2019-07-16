@@ -1,8 +1,8 @@
 {
   "name": "gx-redmine",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "ES7 async wrapper for node-redmine package",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {},
   "author": "Roberto Rossetti",
   "license": "ISC",

@@ -1,14 +1,9 @@
-/**
- * @fileoverview ES7 wrapper for the axios-redmine package.
- */
+import * as Redmine from 'node-redmine';
 
-'use strict';
+export class RedmineAsync {
+    private _redmine: Redmine;
 
-const Redmine = require('node-redmine');
-
-class RedmineAsync {
-
-    constructor(hostname, config, port) {
+    public constructor(hostname, config, port) {
         this._redmine = new Redmine(hostname, config, port);
     }
 
@@ -17,9 +12,9 @@ class RedmineAsync {
      *    Returns a paginated list of issues. By default, it returns open issues only.
      * http://www.redmine.org/projects/redmine/wiki/Rest_Issues#Listing-issues
      */
-    issues(params) {
+    public issues(params): Promise<any> {
         return new Promise((resolve, reject) => {
-            this._redmine.issues(params, function (err, data) {
+            this._redmine.issues(params, (err, data) => {
                 if (err) reject(err);
                 resolve(data);
             });
@@ -30,9 +25,9 @@ class RedmineAsync {
      * Showing an issue
      * http://www.redmine.org/projects/redmine/wiki/Rest_Issues#Showing-an-issue
      */
-    getIssueById(id, params) {
+    public getIssueById(id, params): Promise<any> {
         return new Promise((resolve, reject) => {
-            this._redmine.get_issue_by_id(id, params, function (err, data) {
+            this._redmine.get_issue_by_id(id, params, (err, data) => {
                 if (err) reject(err);
                 resolve(data.issue);
             });
@@ -43,66 +38,64 @@ class RedmineAsync {
      * Creating an issue
      * http://www.redmine.org/projects/redmine/wiki/Rest_Issues#Creating-an-issue
      */
-    createIssue(issue) {
+    public createIssue(issue): Promise<any> {
         return new Promise((resolve, reject) => {
-            this._redmine.create_issue(issue, function (err, data) {
+            this._redmine.create_issue(issue, (err, data) => {
                 if (err) reject(err);
                 resolve(data);
             });
         });
-    };
+    }
 
     /**
      * Updating an issue
      * http://www.redmine.org/projects/redmine/wiki/Rest_Issues#Updating-an-issue
      */
-    updateIssue(id, issue) {
+    public updateIssue(id, issue): Promise<any> {
         return new Promise((resolve, reject) => {
-            this._redmine.update_issue(is, issue, function (err, data) {
+            this._redmine.update_issue(id, issue, (err, data) => {
                 if (err) reject(err);
                 resolve(data);
             });
         });
-    };
+    }
 
     /**
      * Deleting an issue
      * http://www.redmine.org/projects/redmine/wiki/Rest_Issues#Deleting-an-issue
      */
-    deleteIssue(id, issue) {
+    public deleteIssue(id, issue): Promise<any> {
         return new Promise((resolve, reject) => {
-            this._redmine.delete_issue(issue, function (err, data) {
+            this._redmine.delete_issue(issue, (err, data) => {
                 if (err) reject(err);
                 resolve(data);
             });
         });
-    };
+    }
 
     /**
      * Adding a watcher
      * http://www.redmine.org/projects/redmine/wiki/Rest_Issues#Adding-a-watcher
      */
-    addWatcher(id, params) {
+    public addWatcher(id, params): Promise<any> {
         return new Promise((resolve, reject) => {
-            this._redmine.add_watcher(id, params, function (err, data) {
+            this._redmine.add_watcher(id, params, (err, data) => {
                 if (err) reject(err);
                 resolve(data);
             });
         });
-    };
+    }
 
     /**
      * Removing a watcher
      * http://www.redmine.org/projects/redmine/wiki/Rest_Issues#Removing-a-watcher
      */
-    removeWatcher(id, params) {
+    public removeWatcher(id, params): Promise<any> {
         return new Promise((resolve, reject) => {
-            this._redmine.remove_watcher(id, params, function (err, data) {
+            this._redmine.remove_watcher(id, params, (err, data) => {
                 if (err) reject(err);
                 resolve(data);
             });
         });
-    };
+    }
 }
-
-module.exports = RedmineAsync;
