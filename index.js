@@ -58,7 +58,7 @@ class RedmineAsync {
      */
     updateIssue(id, issue) {
         return new Promise((resolve, reject) => {
-            this._redmine.update_issue(is, issue, function (err, data) {
+            this._redmine.update_issue(id, issue, function (err, data) {
                 if (err) reject(err);
                 resolve(data);
             });
