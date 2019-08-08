@@ -61,17 +61,33 @@ export interface Issues {
 export declare class Redmine {
     constructor(host: string, config: any, port: number);
 
+    /////////////////////////////////////// REST API for issues (Stable) ///////////////////////////////////////
+
     public issues(params: any, callback: (err: any, data: any) => void): Issues;
 
     public get_issue_by_id(id: number, params: any, callback: (err: any, data: any) => void): Issue;
 
     public create_issue(issue: IssueData, callback: (err: any, data: any) => void): Issue;
 
-    public update_issue
+    public update_issue(id: number, issue: IssueData, callback: (err: any, data: any) => void): Issue;
 
-    public delete_issue
+    public delete_issue(id: number, callback: (err: any, data: any) => void): void;
 
-    public add_watcher
+    public add_watcher(id: number, params: any, callback: (err: any, data: any) => void): void;
 
-    public remove_watcher
+    public remove_watcher(id: number, params: any, callback: (err: any, data: any) => void): void;
+
+    /////////////////////////////////////// REST API for Issue Relations (Alpha) ///////////////////////////////////////
+
+    public issue_relation_by_issue_id(id: number, callback: (err: any, data: any) => void): void;
+
+    public create_issue_relation(id: number, params: any, callback: (err: any, data: any) => void): void;
+
+    public issue_relation_by_id(id: number, callback: (err: any, data: any) => void): void;
+
+    public delete_issue_relation(id: number, callback: (err: any, data: any) => void): void;
+
+    /////////////////////////////////////// REST API for Common (Alpha) ///////////////////////////////////////
+
+    public upload(content: any, callback: (err: any, data: any) => void): UploadResult;
 }
