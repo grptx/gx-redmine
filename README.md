@@ -26,7 +26,7 @@ const config = {
 const redmine = new RedmineAsync(hostname, config);
 
 // retrieve issues
-const issues = await redmine.issues({limit: 2});
+const issues = await redmine.issues({params : {limit: 2}});
 
 ```
 
