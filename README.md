@@ -26,7 +26,7 @@ const config = {
 const redmine = new RedmineAsync(hostname, config);
 
 // retrieve issues
-const issues = await redmine.issues({params : {limit: 2}});
+const issues = await redmine.issues({limit: 2});
 
 ```
 
@@ -37,10 +37,10 @@ const issues = await redmine.issues({params : {limit: 2}});
 | Issues              | Stable    |          1.0 |     ✓     |
 | Projects            | Stable    |          1.0 |     ☓     |
 | Project Memberships | Alpha     |          1.4 |     ☓     |
-| Users               | Stable    |          1.1 |     ☓     |
+| Users               | Stable    |          1.1 |     ✓     |
 | Time Entries        | Stable    |          1.1 |     ☓     |
 | News                | Prototype |          1.1 |     ☓     |
-| Issue Relations     | Alpha     |          1.3 |     ☓     |
+| Issue Relations     | Alpha     |          1.3 |     ✓     |
 | Versions            | Alpha     |          1.3 |     ☓     |
 | Wiki Pages          | Alpha     |          2.2 |     ☓     |
 | Queries             | Alpha     |          1.3 |     ☓     |
@@ -50,7 +50,7 @@ const issues = await redmine.issues({params : {limit: 2}});
 | Enumerations        | Alpha     |          2.2 |     ☓     |
 | Issue Categories    | Alpha     |          1.3 |     ☓     |
 | Roles               | Alpha     |          1.4 |     ☓     |
-| Groups              | Alpha     |          2.1 |     ☓     |
+| Groups              | Alpha     |          2.1 |     ✓     |
 | Custom Fields       | Alpha     |          2.4 |     ☓     |
 | Search              | Alpha     |          3.3 |    N/A    |
 
@@ -66,3 +66,6 @@ Feedback, bug reports and pull requests are welcome. See the linked github repos
 
 ## Notice
 + node-redmine only supports using the [JSON](http://en.wikipedia.org/wiki/JSON) format.
+
+## version
+0.1.11
